@@ -6,7 +6,7 @@ export class CanvasMapStyle extends Component {
     const __map__ = this.props.__map__;
     return <Select
       options={['全图', '底图']}
-      value={__map__.getFeatures() === 'all' ? '全图' : '底图'}
+      value={'all' === 'all' ? '全图' : '底图'}
       onChange={({ option }) => {
         __map__.setFeatures(option === '全图' ? 'all' : ['bg']);
         this.forceUpdate();

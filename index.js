@@ -1,7 +1,7 @@
 export * from './src/CanvasContainer';
 export * from './src/CanvasInformation';
 export * from './src/CanvasLineAndMark';
-export * from './src/CanvasMarkers';
+// export * from './src/CanvasMarkers';
 export * from './src/CanvasPluginZoom';
 export * from './src/CanvasPositionMonitor';
 export * from './src/CanvasPositions';
