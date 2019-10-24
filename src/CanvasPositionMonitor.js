@@ -22,7 +22,6 @@ export class CanvasPositionMonitor extends Component {
   render() {
     const { positions, selectThingId, propertyTemplate, simple, mapKey,
       setFitView, onUpdateEnd, selectedThing, ...others } = this.props;
-    console.log(others)
     return (
       <CanvasContainer mapKey={mapKey} {...others}>
         {this.props.canvasExtra}
