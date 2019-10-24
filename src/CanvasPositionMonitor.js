@@ -20,11 +20,10 @@ export class CanvasPositionMonitor extends Component {
   }
 
   render() {
-    const positions = this.props.positions;
-    const selectThingId = this.props.selectThingId;
-    const propertyTemplate = this.props.propertyTemplate;
+    const { positions, selectThingId, propertyTemplate, ...others } =
+      this.props;
     return (
-      <CanvasContainer mapKey={this.props.mapKey}>
+      <CanvasContainer mapKey={this.props.mapKey} {...others}>
         {this.props.canvasExtra}
         <CanvasPositions
           positions={positions}
