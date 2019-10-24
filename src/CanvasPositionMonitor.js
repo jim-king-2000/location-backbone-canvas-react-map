@@ -20,10 +20,11 @@ export class CanvasPositionMonitor extends Component {
   }
 
   render() {
-    const { positions, selectThingId, propertyTemplate, ...others } =
-      this.props;
+    const { positions, selectThingId, propertyTemplate, simple, mapKey,
+      setFitView, onUpdateEnd, selectedThing, ...others } = this.props;
+    console.log(others)
     return (
-      <CanvasContainer mapKey={this.props.mapKey} {...others}>
+      <CanvasContainer mapKey={mapKey} {...others}>
         {this.props.canvasExtra}
         <CanvasPositions
           positions={positions}
@@ -33,10 +34,10 @@ export class CanvasPositionMonitor extends Component {
         />
         <CanvasInformation
           onClose={() => selectThingId(undefined) }
-          data={this.props.selectedThing}
+          data={selectedThing}
           template={propertyTemplate}
         />
-        {!this.props.simple && <CanvasInformationTable
+        {!simple && <CanvasInformationTable
           height='small'
           overflow='auto'
           positions={positions}
@@ -57,8 +58,8 @@ export class CanvasPositionMonitor extends Component {
           }}
         />
         <CanvasReactor
-          setFitView={this.props.setFitView}
-          onUpdateEnd={this.props.onUpdateEnd}
+          setFitView={setFitView}
+          onUpdateEnd={onUpdateEnd}
           markers={positions}
           tracingMode={this.state.tracingMode} />
       </CanvasContainer>
