@@ -28,10 +28,7 @@ export class CanvasPositionMonitor extends Component {
         <CanvasPositions
           positions={positions}
           events={{
-            click: e => {
-              console.log(e.target.getExtData())
-              selectThingId(e.target.getExtData().thingId)
-            }
+            click: e => selectThingId(e.target.getExtData().thingId)
           }}
         />
         <CanvasInformation
