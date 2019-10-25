@@ -6,7 +6,7 @@ export class CanvasReactor extends Component {
   componentDidUpdate() {
     if (!this.props.setFitView) return;
     const mapView = this.props.__map__.MapView;
-    setTimeout(() =>mapView.setFitView(), 100);
+    setTimeout(() =>mapView.setFitView(this.props.positions), 100);
     if (this.props.onUpdateEnd) this.props.onUpdateEnd();
   }
 
@@ -14,9 +14,10 @@ export class CanvasReactor extends Component {
     if (!this.props.tracingMode) return null;
 
     const mapView = this.props.__map__.MapView;
-    const isMarkersInViewport = mapView.isInView(this.props.markers);
+    const positions = this.props.positions;
+    const isMarkersInViewport = mapView.isInView(positions);
     if (!isMarkersInViewport) {
-      mapView.setFitView();
+      mapView.setFitView(positions);
     }
     return null;
   }

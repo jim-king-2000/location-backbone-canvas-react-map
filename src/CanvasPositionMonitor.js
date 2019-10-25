@@ -48,6 +48,7 @@ export class CanvasPositionMonitor extends Component {
         />}
         <CanvasPluginZoom
           direction='row'
+          positions={positions}
           tracingMode={this.state.tracingMode}
           onChange={e => this.setState({ tracingMode: e.target.checked })}
           style={{
@@ -59,7 +60,7 @@ export class CanvasPositionMonitor extends Component {
         <CanvasReactor
           setFitView={setFitView}
           onUpdateEnd={onUpdateEnd}
-          markers={positions}
+          positions={positions}
           tracingMode={this.state.tracingMode} />
       </CanvasContainer>
     );

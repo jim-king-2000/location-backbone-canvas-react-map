@@ -5,12 +5,12 @@ import { observer } from 'mobx-react';
 import { CanvasMapStyle } from './CanvasMapStyle';
 
 export const CanvasPluginZoom = observer(
-  ({ __map__, tracingMode, onChange, ...props }) => {
+  ({ __map__, positions, tracingMode, onChange, ...props }) => {
     const mapView = __map__.MapView;
     return (
       <Box margin='xsmall' gap='xsmall' align='center' {...props}>
         <Button plain={false} icon={<Home />}
-          onClick={() => mapView.setFitView()} />
+          onClick={() => mapView.setFitView(positions)} />
         <Button plain={false} icon={<Add />}
           onClick={() => mapView.zoomIn()} />
         <Button plain={false} icon={<Subtract />}
