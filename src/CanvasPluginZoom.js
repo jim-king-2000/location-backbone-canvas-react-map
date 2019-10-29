@@ -6,6 +6,7 @@ import { CanvasMapStyle } from './CanvasMapStyle';
 
 export const CanvasPluginZoom = observer(
   ({ __map__, positions, tracingMode, onChange, ...props }) => {
+    if (!__map__) return null;
     const mapView = __map__.MapView;
     return (
       <Box margin='xsmall' gap='xsmall' align='center' {...props}>
