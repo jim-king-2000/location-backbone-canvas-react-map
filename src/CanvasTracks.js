@@ -1,6 +1,6 @@
 import React from 'react';
 import { Polyline } from 'location-backbone-react-map';
-import { lineStyle, ColorPool } from 'location-backbone-canvas';
+import { ColorPool } from 'location-backbone-canvas';
 
 export const CanvasTracks = ({ tracks, __map__ }) => (
   <>
@@ -13,10 +13,9 @@ export const CanvasTracks = ({ tracks, __map__ }) => (
         __map__={__map__}
         key={`${track.thingId}-${i}`}
         path={pathItem}
-        style={{
-          strokeColor: ColorPool.getColor(track.colorIndex) ||'#006600',
-          ...lineStyle
-        }} />);
+        strokeColor={ColorPool.getColor(track.colorIndex) ||'#006600'}
+        strokeWeight={2}
+      />);
     })}
   </>
 );
