@@ -20,7 +20,7 @@ export class CanvasPositionMonitor extends Component {
   }
 
   render() {
-    const { selectThingId, propertyTemplate, simple, mapKey,
+    const { selectThingId, propertyTemplate, simple, mapKey, mapVendor,
       setFitView, onUpdateEnd, selectedThing, ...others } = this.props;
     const positions = this.props.positions.filter(
       p => p && p.latitude && p.longitude);
@@ -49,6 +49,7 @@ export class CanvasPositionMonitor extends Component {
           }}
         />}
         <CanvasPluginZoom
+          mapVendor={mapVendor}
           direction='row'
           positions={positions}
           tracingMode={this.state.tracingMode}

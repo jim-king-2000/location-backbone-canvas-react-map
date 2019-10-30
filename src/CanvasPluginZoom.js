@@ -5,7 +5,7 @@ import { observer } from 'mobx-react';
 import { CanvasMapStyle } from './CanvasMapStyle';
 
 export const CanvasPluginZoom = observer(
-  ({ __map__, positions, tracingMode, onChange, ...props }) => {
+  ({ __map__, positions, tracingMode, onChange, mapVendor, ...props }) => {
     if (!__map__) return null;
     const mapView = __map__.MapView;
     return (
@@ -16,9 +16,16 @@ export const CanvasPluginZoom = observer(
           onClick={() => mapView.zoomIn()} />
         <Button plain={false} icon={<Subtract />}
           onClick={() => mapView.zoomOut()} />
-        <CheckBox toggle label='跟踪模式' checked={tracingMode}
-          onChange={onChange} />
-        <CanvasMapStyle __map__={__map__} />
+        <CheckBox
+          toggle
+          label='跟踪模式'
+          checked={tracingMode}
+          onChange={onChange}
+        />
+        <CanvasMapStyle
+          __map__={__map__}
+          mapVendor={mapVendor}
+        />
       </Box>
     );
   }

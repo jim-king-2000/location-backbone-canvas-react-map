@@ -10,6 +10,12 @@ const options = [{
 export class CanvasMapStyle extends Component {
   state = options[0]
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.mapVendor !== this.props.mapVendor) {
+      this.setState(options[0]);
+    }
+  }
+
   render() {
     const mapFeature = this.props.__map__.MapFeature;
     return <Select
