@@ -10,8 +10,8 @@ const options = [{
 export class CanvasMapStyle extends Component {
   state = options[0]
 
-  shouldComponentUpdate(prevProps) {
-    if (prevProps.mapVendor !== this.props.mapVendor) {
+  shouldComponentUpdate(nextProps) {
+    if (nextProps.mapVendor !== this.props.mapVendor) {
       this.setState(options[0]);
     }
     return true;
