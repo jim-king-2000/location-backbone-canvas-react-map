@@ -12,10 +12,10 @@ export const CanvasLineAndMark = ({ lines, __map__ }) => (
           path={line.polyLines}
           strokeColor={ColorPool.getColor(line.colorIndex)}
         />
-        {line.stops && line.stops.map(stop => (
+        {line.stops && line.stops.map((stop, i) => (
           <DomMarker
             __map__={__map__}
-            key={stop.id}
+            key={`${stop.id}-${i}`}
             position={stop.location}
             extData={stop}
           >
