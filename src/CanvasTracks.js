@@ -13,7 +13,7 @@ export const CanvasTracks = ({ tracks, __map__ }) => (
         __map__={__map__}
         key={`${track.thingId}-${i}`}
         path={pathItem}
-        strokeColor={ColorPool.getColor(track.colorIndex) ||'#006600'}
+        strokeColor={ColorPool.getColor(track.colorIndex)}
         strokeWeight={2}
       />);
     })}
