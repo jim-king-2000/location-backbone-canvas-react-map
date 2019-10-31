@@ -11,6 +11,7 @@ export const CanvasLineAndMark = ({ lines, __map__ }) => (
           __map__={__map__}
           path={line.polyLines}
           strokeColor={ColorPool.getColor(line.colorIndex)}
+          strokeWeight={2}
         />
         {line.stops && line.stops.map((stop, i) => (
           <DomMarker
