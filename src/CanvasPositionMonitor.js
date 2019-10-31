@@ -25,7 +25,7 @@ export class CanvasPositionMonitor extends Component {
     const positions = this.props.positions.filter(
       p => p && p.latitude && p.longitude);
     return (
-      <CanvasContainer mapKey={mapKey} {...others}>
+      <CanvasContainer mapKey={mapKey} mapVendor={mapVendor} {...others}>
         {this.props.canvasExtra}
         <CanvasPositions
           positions={positions}
