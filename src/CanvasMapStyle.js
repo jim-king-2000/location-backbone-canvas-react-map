@@ -13,6 +13,7 @@ export class CanvasMapStyle extends Component {
   shouldComponentUpdate(nextProps) {
     if (nextProps.mapVendor !== this.props.mapVendor) {
       this.setState(options[0]);
+      return false;
     }
     return true;
   }
