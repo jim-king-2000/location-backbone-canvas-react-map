@@ -1,7 +1,7 @@
 import React from 'react';
-import { Polyline, Marker } from 'location-backbone-react-map';
+import { Polyline, DomMarker } from 'location-backbone-react-map';
 import { Radial } from 'grommet-icons';
-import { lineStyle, colorPool } from 'location-backbone-canvas';
+import { ColorPool } from 'location-backbone-canvas';
 
 export const CanvasLineAndMark = ({ lines, __map__ }) => (
   <>
@@ -10,27 +10,20 @@ export const CanvasLineAndMark = ({ lines, __map__ }) => (
         <Polyline
           __map__={__map__}
           path={line.polyLines}
-          style={{
-            strokeColor: colorPool[line.colorIndex % colorPool.length],
-            ...lineStyle
-          }}
+          strokeColor={ColorPool.getColor(line.colorIndex) ||'#006600'}
         />
         {line.stops && line.stops.map(stop => (
-          <Marker
+          <DomMarker
             __map__={__map__}
             key={stop.id}
             position={stop.location}
             extData={stop}
-            offset={[-4, -4]}
-            render={
-              <div style={{ lineHeight: '8px' }}>
-                <Radial
-                  size='8px'
-                  color={colorPool[line.colorIndex % colorPool.length]}
-                />
-              </div>
-            }
-          />
+          >
+            <Radial
+              size='small'
+              color={ColorPool.getColor(line.colorIndex)}
+            />
+          </DomMarker>
         ))}
       </React.Fragment>
     ))}
