@@ -5,7 +5,7 @@ import { ColorPool } from 'location-backbone-canvas';
 
 export const CanvasLineAndMark = ({ lines, __map__ }) => (
   <>
-    {lines && lines.map(line => (
+    {Array.isArray(lines) && lines.map(line => (
       <React.Fragment key={line.id}>
         <Polyline
           __map__={__map__}
@@ -13,7 +13,7 @@ export const CanvasLineAndMark = ({ lines, __map__ }) => (
           strokeColor={ColorPool.getColor(line.colorIndex)}
           strokeWeight={2}
         />
-        {line.stops && line.stops.map((stop, i) => (
+        {Array.isArray(line.stops) && line.stops.map((stop, i) => (
           <DomMarker
             __map__={__map__}
             key={`${stop.id}-${i}`}

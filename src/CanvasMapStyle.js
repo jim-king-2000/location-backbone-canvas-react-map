@@ -22,7 +22,6 @@ export class CanvasMapStyle extends Component {
     const mapFeature = this.props.__map__.MapFeature;
     return <Select
       labelKey='label'
-      valueKey='label'
       options={options}
       value={this.state}
       onChange={({ option }) => {
