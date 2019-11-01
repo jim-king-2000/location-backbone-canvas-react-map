@@ -4,13 +4,12 @@ import { observer } from 'mobx-react';
 import { CarTopViewObject, ColorPool } from 'location-backbone-canvas';
 
 export const CanvasPositions = observer(
-  ({ __map__, positions, events, ...props }) => (
+  ({ positions, ...props }) => (
     <>
       {Array.isArray(positions) && positions
       .filter(p => p && p.latitude && p.longitude)
       .map(p => (
         <DynamicMarker
-          __map__={__map__}
           key={p.thingId}
           svgIcon={CarTopViewObject}
           fillColor={ColorPool.getColor(p.colorIndex)}
@@ -22,7 +21,6 @@ export const CanvasPositions = observer(
           }}
           angle={p.heading}
           extData={p}
-          events={events}
           {...props}
         />
       ))}
