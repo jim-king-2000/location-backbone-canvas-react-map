@@ -12,27 +12,11 @@ import { CanvasPositionMonitor } from './CanvasPositionMonitor';
 //   tracks
 
 export const CanvasTrackMonitor = ({
-  mapKey,
-  mapVendor,
-  setFitView,
-  onUpdateEnd,
-  simple,
-  positions,
   tracks,
-  selectedThing,
-  selectThingId,
-  propertyTemplate
+  ...props
 }) => (
   <CanvasPositionMonitor
-    mapKey={mapKey}
-    mapVendor={mapVendor}
-    setFitView={setFitView}
-    onUpdateEnd={onUpdateEnd}
-    simple={simple}
-    positions={positions}
-    selectedThing={selectedThing}
-    selectThingId={selectThingId}
-    propertyTemplate={propertyTemplate}
+    {...props}
     canvasExtra={<CanvasTracks tracks={tracks} />}
   />
 );
