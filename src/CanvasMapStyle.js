@@ -27,7 +27,7 @@ export class CanvasMapStyle extends Component {
       onChange={({ option }) => {
         const fullMap = option.fullMap;
         if (fullMap === this.state.fullMap) return;
-        mapFeature.setFullMap(fullMap);
+        mapFeature && mapFeature.setFullMap(fullMap);
         this.setState(option);
       }}
     />;
