@@ -11,11 +11,11 @@ export const CanvasPluginZoom = observer(
     return (
       <Box margin='xsmall' gap='xsmall' align='center' {...props}>
         <Button plain={false} icon={<Home />}
-          onClick={() => mapView.setFitView(positions)} />
+          onClick={() => mapView && mapView.setFitView(positions)} />
         <Button plain={false} icon={<Add />}
-          onClick={() => mapView.zoomIn()} />
+          onClick={() => mapView && mapView.zoomIn()} />
         <Button plain={false} icon={<Subtract />}
-          onClick={() => mapView.zoomOut()} />
+          onClick={() => mapView && mapView.zoomOut()} />
         <CheckBox
           toggle
           label='跟踪模式'
