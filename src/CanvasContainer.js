@@ -2,8 +2,8 @@ import React from 'react';
 import { Map } from 'location-backbone-react-map';
 import { Box, Text } from 'grommet';
 
-export const CanvasContainer = ({ mapKey, children, ...props }) => (
-  <Map mapKey={mapKey} {...props}>
+export const CanvasContainer = ({ children, ...props }) => (
+  <Map {...props}>
     {children}
     <Box style={{
       position: 'absolute',
