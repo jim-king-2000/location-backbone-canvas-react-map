@@ -15,10 +15,7 @@ export const CanvasPositions = observer(
           fillColor={ColorPool.getColor(p.colorIndex)}
           title={p.isOnline ? '在线' : '离线'}
           zIndex={150}
-          position={{
-            latitude: p.latitude,
-            longitude: p.longitude
-          }}
+          position={p}
           angle={p.heading}
           extData={p}
           {...props}
