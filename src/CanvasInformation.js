@@ -5,17 +5,13 @@ import { Table, TableBody, TableRow, TableCell } from 'grommet';
 import { defaultPropertyTemplate } from 'location-backbone-canvas';
 
 export const CanvasInformation = observer(({
-  __map__, onClose, data, template, ...props
+  onClose, data, template, ...props
 }) => {
   template = template || defaultPropertyTemplate;
   return (
     <>
       {data && <InfoWindow
-        __map__={__map__}
-        position={{
-          latitude: data.latitude,
-          longitude: data.longitude
-        }}
+        position={data}
         events={{ close: onClose }}
         {...props}
       >
