@@ -14,13 +14,13 @@ export class CanvasReactor extends Component {
   }
 
   render() {
-    if (!this.props.tracingMode) return null;
+    const { tracingMode, __map__, positions } = this.props;
+    if (!tracingMode) return null;
 
-    const mapView = this.props.__map__.MapView;
+    const mapView = __map__.MapView;
     if (!mapView) return null;
-    const positions = this.props.positions;
-    const isMarkersInViewport = mapView.isInView(positions);
-    if (!isMarkersInViewport) {
+
+    if (!mapView.isInView(positions)) {
       mapView.setFitView(positions);
     }
     return null;
