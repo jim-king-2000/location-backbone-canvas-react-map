@@ -4,12 +4,15 @@ import { observer } from 'mobx-react';
 @observer
 export class CanvasReactor extends Component {
   componentDidUpdate() {
-    if (!this.props.setFitView) return;
-    const mapView = this.props.__map__.MapView;
+    const { setFitView, __map__, positions, onUpdateEnd } = this.props;
+    if (!setFitView) return;
+
+    const mapView = __map__.MapView;
     if (!mapView) return;
+    
     setTimeout(() => {
-      mapView.setFitView(this.props.positions);
-      if (this.props.onUpdateEnd) this.props.onUpdateEnd();
+      mapView.setFitView(positions);
+      onUpdateEnd && onUpdateEnd();
     }, 100);
   }
 
