@@ -24,7 +24,7 @@ export class CanvasReactor extends Component {
     if (!mapView) return null;
 
     if (!mapView.isInView(positions)) {
-      mapView.setFitView(positions);
+      setTimeout(() => mapView.setFitView(positions));
     }
     return null;
   }
