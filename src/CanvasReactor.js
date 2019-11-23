@@ -13,7 +13,7 @@ export class CanvasReactor extends Component {
     setTimeout(() => {
       mapView.setFitView(positions);
       onUpdateEnd && onUpdateEnd();
-    }, 100);
+    }, 500);
   }
 
   render() {
