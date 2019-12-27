@@ -11,7 +11,7 @@ export const CanvasTracks = ({ tracks, __map__ }) => (
       }
       return path.map((pathItem, i) => <Polyline
         __map__={__map__}
-        key={`${track.thingId}-${i}`}
+        key={`${track.thingId}-${track.start}-${track.end}-${i}`}
         path={pathItem}
         strokeColor={ColorPool.getColor(track.colorIndex)}
         strokeWeight={4}
