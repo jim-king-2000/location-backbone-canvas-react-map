@@ -7,7 +7,7 @@ export class CanvasReactor extends Component {
     const { setFitView, __map__, positions, onUpdateEnd } = this.props;
     if (!setFitView) return;
 
-    const mapView = __map__.MapView;
+    const mapView = __map__ && __map__.MapView;
     if (!mapView) return;
     
     setTimeout(() => {
