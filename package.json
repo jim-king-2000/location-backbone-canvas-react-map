@@ -17,7 +17,7 @@
     "url": "https://github.com/jim-king-2000/location-backbone-canvas-react-map/issues"
   },
   "homepage": "https://github.com/jim-king-2000/location-backbone-canvas-react-map#readme",
-  "dependencies": {
+  "peerDependencies": {
     "location-backbone-react-map": "git+https://github.com/jim-king-2000/location-backbone-react-map.git"
   }
 }
